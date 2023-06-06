@@ -35,6 +35,9 @@ const App = () => {
         .then(personAdded => (
           setPersons(persons.concat(personAdded))
         ))
+        .catch(error => {
+          console.log(error.response.data.error)
+        })
       
       const msgToAdd = {
         msg : `Added ${newName}`,
